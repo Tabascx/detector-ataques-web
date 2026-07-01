@@ -1,10 +1,12 @@
-ï»¿# Detector de Ataques Web
+# Detector de Ataques Web
+
+![Demo](docs/demo.apng)
 
 Sistema de monitorizacion de seguridad en tiempo real que detecta patrones de ataque del OWASP Top 10 (SQL Injection, XSS, Path Traversal, Command Injection) y comportamiento anomalo (fuerza bruta) analizando logs de servidor web, con un dashboard en vivo construido en Angular.
 
 ## Por que este proyecto
 
-La mayoria de detectores de estudiante se limitan a buscar patrones con regex (deteccion basada en firmas). Este proyecto aÃ±ade una segunda capa: **deteccion basada en comportamiento**, contando la frecuencia de peticiones por IP para identificar ataques de fuerza bruta que no contienen ningun payload malicioso reconocible â€” el mismo principio que usan los SOC reales para reducir falsos negativos.
+La mayoria de detectores de estudiante se limitan a buscar patrones con regex (deteccion basada en firmas). Este proyecto añade una segunda capa: **deteccion basada en comportamiento**, contando la frecuencia de peticiones por IP para identificar ataques de fuerza bruta que no contienen ningun payload malicioso reconocible — el mismo principio que usan los SOC reales para reducir falsos negativos.
 
 ## Arquitectura
 
@@ -67,9 +69,9 @@ El dashboard incluye dos botones para generar actividad de prueba sin necesidad 
 
 ## Decisiones tecnicas
 
-**Por que WebSocket y no polling HTTP**: las alertas deben aparecer en tiempo real sin que el cliente tenga que preguntar constantemente "Â¿hay algo nuevo?". WebSocket mantiene una conexion abierta y el servidor empuja los datos en cuanto se detectan.
+**Por que WebSocket y no polling HTTP**: las alertas deben aparecer en tiempo real sin que el cliente tenga que preguntar constantemente "¿hay algo nuevo?". WebSocket mantiene una conexion abierta y el servidor empuja los datos en cuanto se detectan.
 
-**Por que deteccion por frecuencia ademas de por patron**: un ataque de fuerza bruta contra un formulario de login no contiene ningun contenido malicioso reconocible por regex â€” son peticiones legitimas repetidas muchas veces. Solo se detecta observando el comportamiento a lo largo del tiempo, no el contenido de una peticion aislada.
+**Por que deteccion por frecuencia ademas de por patron**: un ataque de fuerza bruta contra un formulario de login no contiene ningun contenido malicioso reconocible por regex — son peticiones legitimas repetidas muchas veces. Solo se detecta observando el comportamiento a lo largo del tiempo, no el contenido de una peticion aislada.
 
 **Por que Angular Signals en vez de RxJS/Subject**: el proyecto se genero en modo zoneless, para el cual Signals es el enfoque recomendado por el equipo de Angular. Los `computed()` recalculan automaticamente sin necesidad de suscripciones manuales ni `ngOnChanges`.
 
