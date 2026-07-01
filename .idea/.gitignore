@@ -1,8 +1,24 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# === Python (backend) ===
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+backend/*.egg-info/
+
+# === Node / Angular (frontend) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/*.log
+
+# === IDEs JetBrains (WebStorm / PyCharm) ===
+.idea/
+backend/.idea/
+frontend/.idea/
+
+# === Sistema ===
+.DS_Store
+Thumbs.db
+
+# === Logs de prueba del detector ===
+backend/access.log
