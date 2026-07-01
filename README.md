@@ -84,7 +84,3 @@ El dashboard incluye dos botones para generar actividad de prueba sin necesidad 
 - Exportacion de alertas a CSV
 - Dockerizacion completa (backend + frontend)
 - Panel de severidad configurable por el usuario
-
-## Autor
-
-Proyecto desarrollado como parte de la formacion en Desarrollo de Aplicaciones Web (DAW), explorando la interseccion entre desarrollo frontend/backend y ciberseguridad defensiva.
